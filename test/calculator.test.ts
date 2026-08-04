@@ -1,5 +1,5 @@
 import { describe, it, expect } from "bun:test";
-import { add, subtract, multiply, divide } from "../src/calculator";
+import { add, subtract, multiply, divide, power } from "../src/calculator";
 
 describe("calculator", () => {
   it("should add two numbers", () => {
@@ -20,5 +20,13 @@ describe("calculator", () => {
 
   it("should throw an error when dividing by zero", () => {
     expect(() => divide(10, 0)).toThrow("division by zero");
+  });
+
+  it("should calculate power(2, 10) as 1024", () => {
+    expect(power(2, 10)).toBe(1024);
+  });
+
+  it("should calculate power(5, 0) as 1", () => {
+    expect(power(5, 0)).toBe(1);
   });
 });
